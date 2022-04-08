@@ -5,6 +5,7 @@
 /**
 *main - Entry point
 *
+*betty style doc for function main goes there 
 *The return is always (0) success
 */
 
