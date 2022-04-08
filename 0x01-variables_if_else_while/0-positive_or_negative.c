@@ -5,7 +5,8 @@
 /**
 *main - Entry point
 *
-*betty style doc for function main goes there 
+*betty style doc for function main goes there
+*
 *The return is always (0) success
 */
 
@@ -16,12 +17,12 @@ int n;
 srand(time(0));
 n = rand() - RAND_MAX / 2;
 
-if (n==0)
+if (n == 0)
 {
 printf("%i is zero\n", n);
 }
 
-else if (n<0)
+else if (n < 0)
 {
 printf("%i is negative\n", n);
 }
