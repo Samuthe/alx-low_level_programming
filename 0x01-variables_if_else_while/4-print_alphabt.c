@@ -18,7 +18,7 @@ continue;
 else if (alphabet == 'e')
 continue;
 
-putcher(alphabet);
+putchar(alphabet);
 }
 
 putchar('\n');
