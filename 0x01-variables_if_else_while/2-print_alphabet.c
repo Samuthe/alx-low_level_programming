@@ -5,7 +5,7 @@
 *
 *Return: Always 0 (success/corrrect)
 */
-int main(void);
+int main(void)
 {
 
 char alphabet;
