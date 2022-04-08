@@ -21,7 +21,7 @@ break;
 }
 
 putchar('.');
-putchar(' ');
+putchar (' ');
 }
 putchar('\n');
 
