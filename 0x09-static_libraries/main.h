@@ -1,4 +1,4 @@
-#ifndef _MAIN_H
+#ifndef _FUNCTION_H
 #define _FUNCTIONS_H
 int _putchar(char c);
 int _islower(int c);
