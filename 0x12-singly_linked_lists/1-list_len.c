@@ -13,7 +13,7 @@ size_t i;
 
 for (i = 0; h != NULL; i++)
 
-h->next;
+h = h->next;
 
 return (i);
 }
