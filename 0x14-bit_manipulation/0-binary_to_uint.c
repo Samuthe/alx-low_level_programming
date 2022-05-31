@@ -1,28 +1,68 @@
-#include <stdio.h>
 #include "main.h"
-
 /**
- * binary_to_uint - Function that converts a binary number to an unsigned int.
- * Prototype: unsigned int binary_to_uint(const char *b);
- * @b: is pointing to a string of 0 and 1 chars
- * Return: the converted number, or 0 if
- * -> there is one or more chars in the string b that is not 0 or 1
- * -> b is NULL
+ * _pow - function that return the
+ * value of x raised to the power of y
+ *
+ * @x: parameter to base
+ * @y: parameter of pow
+ *
+ * Return: End program
+ */
+int _pow(int x, int y)
+{
+if (y < 0)
+{
+return (-1);
+}
+else if (y == 0)
+{
+return (1);
+}
+else
+{
+y--;
+x = x * _pow(x, y);
+return (x);
+}
+
+return (0);
+}
+/**
+ * binary_to_uint - function that converts a binary number to an
+ * unsigned int
+ *
+ * @b: Pointer with the string whit the number to convert
+ *
+ * Return: The number converted
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int value = 0;
+unsigned int sum = 0;
+int i, x, n;
 
-	if (b == NULL)
-		return (0);
-	while (*b != '\0')
-	{
-		value = value << 1;
-		if (*b != '1' && *b != '0')
-			return (0);
-		else if (*b == '1')
-			value = value | 1;
-		b++;
-	}
-	return (value);
+if (b == NULL)
+{
+return (0);
+}
+
+n = strlen(b) - 1;
+
+for (x = 0, i = 0; n >= x; n--)
+{
+switch (b[i])
+{
+case '1':
+sum = sum + _pow(2, n);
+i++;
+break;
+case '0':
+sum = sum + 0;
+i++;
+break;
+default:
+return (0);
+}
+}
+
+return (sum);
 }
