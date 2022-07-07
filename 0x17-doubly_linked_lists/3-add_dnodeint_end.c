@@ -1,38 +1,39 @@
 #include "lists.h"
 
 /**
- * *add_dnodeint_end - function adds new node to end of list
-*
-*@head: pointer to pointer of head of linked list
-*@n: const int pointer
-*
-* Return: address of new element, or NULL if failed
-*/
-
+ * add_dnodeint_end - Adds a new node at the end of a dlistint_t list.
+ * @head: Double pointer to struct.
+ * @n: data to insert in the new node.
+ *
+ * Return: The address of the new element, or NULL if it failed.
+ */
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
-dlistint_t *last = *head;
-dlistint_t *newnode = NULL;
+    dlistint_t *node = NULL, *tmp = *head;
 
-newnode = malloc(sizeof(dlistint_t));
-if (newnode == NULL)
-return (NULL);
+    if (head == NULL)
+        return (NULL);
 
-newnode->n = n;
-newnode->next = NULL;
+    node = malloc(sizeof(dlistint_t));
+    if (!node)
+    {
+        dprintf(2, "Error: Can't malloc\n");
+        return (NULL);
+    }
+    node->n = n;
+    node->next = NULL;
+    if (*head == NULL)
+    {
+        node->prev = NULL;
+        (*head) = node;
+        return (node);
+    }
 
-if ((*head) == NULL)
-{
-newnode->prev = NULL;
-(*head) = newnode;
-return (newnode);
-}
-
-while (last->next != NULL)
-last = last->next;
-last->next = newnode;
-
-if (newnode->next != NULL)
-newnode->next->prev = newnode;
-return (newnode);
+    while (tmp->next)
+    {
+        tmp = tmp->next;
+    }
+    tmp->next = node;
+    node->prev = tmp;
+    return (node);
 }
