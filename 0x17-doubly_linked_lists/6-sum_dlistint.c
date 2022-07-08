@@ -7,8 +7,9 @@
 * Return: 0 if empty or sum of n value
 */
 
-int sum_dlistint(dlistint_t *head){
+int sum_dlistint(dlistint_t *head)
+{
 if (head)
 return (head->n + sum_dlistint(head->next));
-return 0;
+return (0);
 }
